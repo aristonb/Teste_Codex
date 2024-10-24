@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codex Travel - Seu Destino de Férias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+		#voltarAoTopo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            cursor: pointer;
+            display: none;
+            transition: background-color 0.3s ease;
+        }
+
+        #voltarAoTopo:hover {
+            background-color: var(--secondary-color);
+        }	
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --text-color: #333;
+            --background-color: #f4f4f4;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--background-color);
+        }
+        header {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav {
+            background: #fff;
+            padding: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 2rem 0;
+        }
+        .banner {
+            background: #fff;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .banner img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        .card {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+        input, textarea, button {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: var(--secondary-color);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: var(--primary-color);
+        }
+        footer {
+            background: var(--primary-color);
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        footer a {
+            color: #fff;
+        }
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Codex Travel</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#destinos">Destinos</a></li>
+            <li><a href="#depoimentos">Depoimentos</a></li>
+            <li><a href="#calculadora">Calculadora</a></li>
+            <li><a href="#contato">Contato</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2>Bem-vindo ao Codex Travel</h2>
+            <div class="banner" id="banner"></div>
+        </section>
+        <section id="sobre">
+            <h2>Sobre Nós</h2>
+            <p>Somos uma empreza dedicada a tornar suas férias inesquecíveis. Com mais de 10 anos de esperiência, garantimos a melhor experincia de viagem para você e sua família.</p>
+            <p>Siga-nos nas redes sociais:</p>
+            <a href="https://www.faceb.com/viagemfacil" target="_blank">Facebook</a> |
+            <a href="https://www.insta.com/viagemfacil" target="_blank">Instagram</a>
+        </section>
+        <section id="destinos">
+            <h2>Nossos Destinos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Paris, França</h3>
+                    <img src="/api/placeholder/300/200" alt="Paris" style="width:100%;">
+                    <p>Descubra a cidade luz!</p>
+                </div>
+                <div class="card">
+                    <h3>Tóquio, Japão</h3>
+                    <img src="/api/placeholder/300/200" alt="Tóquio" style="width:100%;">
+                    <p>Explore a cultura japonesa!</p>
+                </div>
+                <div class="card">
+                    <h3>Nova York, EUA</h3>
+                    <img src="/api/placeholder/300/200" alt="Nova York" style="width:100%;">
+                    <p>A cidade que nunca dorme!</p>
+                </div>
+                <div class="card">
+                    <h3>Rio de Janeiro, Brasil</h3>
+                    <img src="/api/placeholder/300/200" alt="Rio de Janeiro" style="width:100%;">
+                    <p>Praias deslumbrantes!</p>
+                </div>
+            </div>
+        </section>
+        <section id="depoimentos">
+            <h2>Depoimentos</h2>
+            <div class="grid">
+                <div class="card">
+                    <p>"Viagem incrível! Recomendo a todos."</p>
+                    <strong>- Maria Silva</strong>
+                </div>
+                <div class="card">
+                    <p>"Atendimento excelente e preços justos."</p>
+                    <strong>- João Santos</strong>
+                </div>
+                <div class="card">
+                    <p>"Melhor agência que já utilizei."</p>
+                    <strong>- user_123</strong>
+                </div>
+            </div>
+        </section>
+        <section id="calculadora">
+            <h2>Calculadora de Orçamento</h2>
+            <form id="orcamentoForm" class="card">
+                <label for="valorPassagem">Valor da passagem:</label>
+                <input type="number" id="valorPassagem" required>
+                <label for="numeroPessoas">Número de pessoas:</label>
+                <input type="number" id="numeroPessoas" required>
+                <label for="diasHospedagem">Dias de hospedagem:</label>
+                <input type="number" id="diasHospedagem" required>
+                <label for="dataNascimento">Data de Nascimento:</label>
+                <input type="date" id="dataNascimento" required>
+                <button type="submit">Calcular</button>
+            </form>
+            <p id="resultadoOrcamento" class="card"></p>
+        </section>
+        <section id="contato">
+            <h2>Entre em Contato</h2>
+            <form id="contatoForm" class="card">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" required>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem"></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+	 <button id="voltarAoTopo" title="Voltar ao Topo">↑</button>
+    <footer>
+        <p>Codex Travel &copy; 2024. Todos os direitos reservados.</p>
+        <p>
+            <a href="https://www.noticias.com/viagemfacil-melhor-agencia" target="_blank">Veja o que dizem sobre nós</a>
+        </p>
+    </footer>
+
+    <script>
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("voltarAoTopo").style.display = "block";
+            } else {
+                document.getElementById("voltarAoTopo").style.display = "none";
+            }
+        };
+
+        document.getElementById("voltarAoTopo").onclick = function() {
+        };	
+	
+        const banners = [
+            { img: "/api/placeholder/800/400", link: "#" },
+            { img: "/api/placeholder/800/400", link: "/destino-inexistente" },
+            { img: "/api/placeholder/800/400", link: "#" },
+            { img: "banner_erro.jpg", link: "#" }
+        ];
+        let currentBanner = 0;
+        function rotateBanner() {
+            const banner = banners[currentBanner];
+            document.getElementById('banner').innerHTML = `<a href="${banner.link}"><img src="${banner.img}" alt="Banner ${currentBanner + 1}" style="width:100%;"></a>`;
+            currentBanner = (currentBanner + 1) % banners.length;
+        }
+        setInterval(rotateBanner, 3000);
+
+
+        document.getElementById('orcamentoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const valorPassagem = parseFloat(document.getElementById('valorPassagem').value);
+            const numeroPessoas = parseInt(document.getElementById('numeroPessoas').value);
+            const diasHospedagem = parseInt(document.getElementById('diasHospedagem').value);
+            const dataNascimento = new Date(document.getElementById('dataNascimento').value);
+
+            const hoje = new Date();
+            const idade = hoje.getFullYear() - dataNascimento.getFullYear();
+            if (idade < 18) {
+                alert("Você deve ter pelo menos 18 anos para fazer uma reserva.");
+                return;
+            }
+
+            const totalPassagens = valorPassagem * numeroPessoas;
+            const totalHospedagem = 500 * diasHospedagem;
+            const total = totalPassagens + totalHospedagem + 1000;
+            document.getElementById('resultadoOrcamento').textContent = `Orçamento total: R$ ${total.toFixed(2)}`;
+        });
+
+        
+        document.getElementById('contatoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            if (nome.length < 3) {
+                alert("O nome deve ter pelo menos 3 caracteres.");
+                return;
+            }
+            if (!email.includes('@')) {
+                alert("E-mail inválido.");
+                return;
+            }
+            alert("Mensagem enviada com sucesso!"); // Mensagem enganosa
+        });
+
+        
+        document.querySelector('nav').addEventListener('click', function() {
+            setTimeout(() => {
+                document.querySelector('header').style.display = 'none';
+            }, 5000);
+        });
+
+        window.addEventListener('hashchange', function() {
+            if (location.hash === '#destinos') {
+                location.href = '/pagina404';
+            }
+        });
+    </script>
+</body>
+</html>
